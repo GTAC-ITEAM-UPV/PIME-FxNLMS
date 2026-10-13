@@ -22,13 +22,13 @@ Paper published in [IEEE Xplore](https://ieeexplore.ieee.org/document/11716690).
 ````text
 PIME-FxNLMS/
 ├── README.md
-├── matlab/
+├── matlab code/
 │   ├── main.m
 │   ├── pime_fxnlms_online_estimation.m
 │   ├── acoustic_paths_gen.m
 │   ├── rir_generator.mexw64
 │   └── rir_generator.mexmaci64
-├── simulink/
+├── simulink models/
 │   ├── PIME_FxNLMS_2023a.slx
 │   ├── PIME_FxNLMS_Speedgoat_2023a.slx
 │   ├── pime_init.m
