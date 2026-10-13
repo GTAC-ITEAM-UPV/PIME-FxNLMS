@@ -51,7 +51,7 @@ Figure 1: Physical real-time setup
 
 The following video shows the PIME-FxNLMS algorithm working in real time on Speedgoat, with the reference noise playing continuously and the error microphone position being changed mid-run to demonstrate online re-estimation of the acoustic paths. The audio playing in the video is what the error microphone captured.
 
-[github pages link]
+[PIME-FxNLMS algorithm video demo](https://gtac-iteam-upv.github.io/ANC_demo/)
 
 ## PIME-FxNLMS Algorithm
 
