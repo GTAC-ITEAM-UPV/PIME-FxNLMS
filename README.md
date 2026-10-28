@@ -71,31 +71,37 @@ Note: individual estimates of P(z) and S(z) are not guaranteed to converge to th
 ### Matlab model
 
 The PIME-FxNLMS implemented in MATLAB code uses three files:    
-- #### acoustic_paths_gen.m
+- #### `acoustic_paths_gen.m`
   
-  Generates the primary and secondary path impulse responses using the **rir_generator** MEX file (precompiled for Windows and macOS Intel). Here, the room size, microphone and speaker positions can be adjusted.
+  Generates the primary and secondary path impulse responses using the `rir_generator` MEX file (precompiled for Windows and macOS Intel). Here, the room size, microphone and speaker positions can be adjusted.
   
-- #### pime_fxnlms_online_estimation.m
+- #### `pime_fxnlms_online_estimation.m`
   
    Implements the PIME-FxNLMS algorithm. On each sample it estimates the primary and secondary paths online, updates the internal control model in parallel, blends its error with the real error using the weight γ(n), and updates the control filter. It also supports switching between two sets of real acoustic paths mid-simulation, to reproduce the path-change experiments from the paper.
 
-- #### main.m
+- #### `main.m`
   
-   Defines the algorithm parameters, calls acoustic_paths_gen.m to generate the acoustic paths, runs pime_fxnlms_online_estimation.m, and plots the resulting signals and curves. This is the only file that needs to be run.  
+   Defines the algorithm parameters, calls `acoustic_paths_gen.m` to generate the acoustic paths, runs `pime_fxnlms_online_estimation.m`, and plots the resulting signals and curves. This is the only file that needs to be run.  
   
 ### Simulink model 
 
-- #### PIME_FxNLMS_2023a.slx  
+- #### `PIME_FxNLMS_2023a.slx` 
   
-  This model simulates the algorithm in Simulink. To configure the parameters edit and run **pime_init.m**. The **paths_mic643.mat** loaded in the initialization file are real impulse responses recorded for the primary and secondary paths from three different microphone positions, these can be replaced with other paths.
+  This model simulates the algorithm in Simulink. To configure the parameters edit and run `pime_init.m`. The `paths_mic643.mat` loaded in the initialization file are real impulse responses recorded for the primary and secondary paths from three different microphone positions, these can be replaced with other paths.
 
-- #### PIME_FxNLMS_Speedgoat_2023a.slx
+- #### `PIME_FxNLMS_Speedgoat_2023a.slx`
   
-  This is the model used in the demo to run the algorithm in real time on a Speedgoat. To configure the parameters edit and run **pime_init.m**.
+  This is the model used in the demo to run the algorithm in real time on a Speedgoat. To configure the parameters edit and run `pime_init.m`.
 
 ## Citation
 
 If you use this code in your research, please cite the following paper:   
 M. Ferrer, M. de Diego and A. Gonzalez, "Error Path Modeling of Dynamic Systems in Active Noise Control," in IEEE Transactions on Audio, Speech and Language Processing, vol. 34, pp. 4376-4390, 2026, doi: 10.1109/TASLPRO.2026.3739187.
+
+## Acknowledgements
+
+The precompiled MEX files in `matlab code/` (`rir_generator.mexw64` and `rir_generator.mexmaci64`) were compiled from the [RIR-Generator](https://github.com/ehabets/RIR-Generator) project by Emanuël A. P. Habets, which implements the image-source method for generating room impulse responses. They are used in `acoustic_paths_gen.m` to simulate the primary and secondary acoustic paths.
+
+RIR-Generator is distributed under the MIT License; its copyright notice and license text are included in [`matlab code/RIR-Generator-LICENSE.txt`](matlab%20code/RIR-Generator-LICENSE.txt).
   
 
