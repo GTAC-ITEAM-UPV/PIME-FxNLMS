@@ -93,6 +93,9 @@ The PIME-FxNLMS implemented in MATLAB code uses three files:
   
   This is the model used in the demo to run the algorithm in real time on a Speedgoat. To configure the parameters edit and run **pime_init.m**.
 
-  
+## Citation
+
+If you use this code in your research, please cite the following paper:   
+M. Ferrer, M. de Diego and A. Gonzalez, "Error Path Modeling of Dynamic Systems in Active Noise Control," in IEEE Transactions on Audio, Speech and Language Processing, vol. 34, pp. 4376-4390, 2026, doi: 10.1109/TASLPRO.2026.3739187.
   
 
